@@ -19,7 +19,7 @@ jobs:
     env:
       DOTNET_FRAMEWORK: ${{ inputs.dotnetFramework }}
       CONFIGURATION: Release
-      PUBLISH_DIR: publish\${{ inputs.dotnetFramework }}
+      PUBLISH_DIR: 'publish\net48'
 
     steps:
     - name: Checkout Source
@@ -36,11 +36,12 @@ jobs:
       run: nuget restore SSSApp/SSSApp.sln
     - name: MSBuild Publish
       run: |
+        echo "msbuild SSSApp/SSSApp.csproj /p:Configuration=${{ env.CONFIGURATION }} /p:TargetFramework=${{ env.DOTNET_FRAMEWORK }} /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:PublishDir=${{ env.PUBLISH_DIR }} /m"
         msbuild SSSApp/SSSApp.csproj /p:Configuration=${{ env.CONFIGURATION }} /p:TargetFramework=${{ env.DOTNET_FRAMEWORK }} /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:PublishDir=${{ env.PUBLISH_DIR }} /m
     - name: Upload Publish Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: app-publish-${{ env.DOTNET_FRAMEWORK }}
+        name: app-publish-net48
         path: ${{ env.PUBLISH_DIR }}
   
   deploy:
