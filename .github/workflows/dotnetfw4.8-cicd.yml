@@ -1,0 +1,42 @@
+name: Dot net framework build and publish
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch: 
+    inputs:
+      dotnetFramework: 
+        description: "Target .NET Framework (net62 | net472 | net48)"
+        required: true
+        default: "net48"
+  
+
+jobs:
+  build:
+    runs-on: self-hosted
+    env:
+      DOTNET_FRAMEWORK: ${{ inputs.dotnetFramework }}
+      CONFIGURATION: Release
+      PUBLISH_DIR: publish\${{ inputs.dotnetFramework }}
+
+    steps:
+    - name: Checkout Source
+      uses: actions/checkout@v4
+    - name: Add MSBuild to Path
+      uses: microsoft/setup-msbuild@v2
+    - uses: nuget/setup-nuget@v2
+      with:
+        #nuget-api-key: ${{ secrets.NuGetAPIKey }}
+        nuget-version: '5.x'
+    - name: Restore dependencies
+      run: nuget restore SSSApp/SSSApp.sln
+    - name: MSBuild Publish
+      run: |
+        msbuild SSSApp/SSSApp.sln /p:Configuration=%CONFIGURATION% /p:TargetFramework=%DOTNET_FRAMEWORK% /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:PublishDir=%PUBLISH_DIR%\ /m
+    - name: Upload Publish Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: app-publish-${{ env.DOTNET_FRAMEWORK }}
+        path: ${{ env.PUBLISH_DIR }}
