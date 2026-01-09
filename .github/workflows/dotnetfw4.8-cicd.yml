@@ -27,7 +27,7 @@ jobs:
     - name: Add MSBuild to Path
       uses: microsoft/setup-msbuild@v2
       with:
-        vs-version: '[16.4,16.5)'
+        vs-version: '16.11'
     - uses: nuget/setup-nuget@v2
       with:
         #nuget-api-key: ${{ secrets.NuGetAPIKey }}
