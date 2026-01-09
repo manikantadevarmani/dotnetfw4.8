@@ -34,7 +34,7 @@ jobs:
       run: nuget restore SSSApp/SSSApp.sln
     - name: MSBuild Publish
       run: |
-        msbuild SSSApp/SSSApp.sln /p:Configuration=%CONFIGURATION% /p:TargetFramework=%DOTNET_FRAMEWORK% /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:PublishDir=%PUBLISH_DIR%\ /m
+        msbuild SSSApp/SSSApp.sln /p:Configuration=${{ env.CONFIGURATION }} /p:TargetFramework=${{ env.DOTNET_FRAMEWORK }} /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:PublishDir=${{ env.PUBLISH_DIR }} /m
     - name: Upload Publish Artifact
       uses: actions/upload-artifact@v4
       with:
