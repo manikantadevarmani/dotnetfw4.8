@@ -42,3 +42,24 @@ jobs:
       with:
         name: app-publish-${{ env.DOTNET_FRAMEWORK }}
         path: ${{ env.PUBLISH_DIR }}
+  
+  deploy:
+    name: Deploy (Approval Required)
+    needs: build
+    runs-on: self-hosted
+    environment:
+      name: production
+    env:
+      DOTNET_FRAMEWORK: ${{ inputs.dotnetFramework }}
+      DEPLOY_PATH: C:\websites\SSSApp.com\wwwroot
+
+    steps:
+    - name: Download Publish Artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: app-publish-${{ env.DOTNET_FRAMEWORK }}
+        path: deploy
+    - name: Deploy application to IISRoot
+      shell: powershell
+      run: |
+        Copy-Item -Path "deploy\*" -Destination "$env:DEPLOY_PATH" -Recurse -Force
