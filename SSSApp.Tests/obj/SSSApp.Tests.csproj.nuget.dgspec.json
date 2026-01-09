@@ -1,0 +1,104 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Hanumesh\\Desktop\\devops\\manikantagoudamain1991\\Githubprojects\\aspdotnet4.8\\SSSApp.Tests\\SSSApp.Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Hanumesh\\Desktop\\devops\\manikantagoudamain1991\\Githubprojects\\aspdotnet4.8\\SSSApp.Tests\\SSSApp.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Hanumesh\\Desktop\\devops\\manikantagoudamain1991\\Githubprojects\\aspdotnet4.8\\SSSApp.Tests\\SSSApp.Tests.csproj",
+        "projectName": "SSSApp.Tests",
+        "projectPath": "C:\\Users\\Hanumesh\\Desktop\\devops\\manikantagoudamain1991\\Githubprojects\\aspdotnet4.8\\SSSApp.Tests\\SSSApp.Tests.csproj",
+        "packagesPath": "C:\\Users\\Hanumesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hanumesh\\Desktop\\devops\\manikantagoudamain1991\\Githubprojects\\aspdotnet4.8\\SSSApp.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Hanumesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "C:\\Users\\Hanumesh\\Desktop\\devops\\manikantagoudamain1991\\Githubprojects\\aspdotnet4.8\\SSSApp\\SSSApp.csproj": {
+                "projectPath": "C:\\Users\\Hanumesh\\Desktop\\devops\\manikantagoudamain1991\\Githubprojects\\aspdotnet4.8\\SSSApp\\SSSApp.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Microsoft.AspNet.Razor": {
+              "target": "Package",
+              "version": "[3.2.7, )"
+            },
+            "Microsoft.AspNet.WebPages": {
+              "target": "Package",
+              "version": "[3.2.7, )"
+            },
+            "Microsoft.Web.Infrastructure": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\Hanumesh\\Desktop\\devops\\manikantagoudamain1991\\Githubprojects\\aspdotnet4.8\\SSSApp\\SSSApp.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Hanumesh\\Desktop\\devops\\manikantagoudamain1991\\Githubprojects\\aspdotnet4.8\\SSSApp\\SSSApp.csproj",
+        "projectName": "SSSApp",
+        "projectPath": "C:\\Users\\Hanumesh\\Desktop\\devops\\manikantagoudamain1991\\Githubprojects\\aspdotnet4.8\\SSSApp\\SSSApp.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    }
+  }
+}
